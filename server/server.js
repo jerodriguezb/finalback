@@ -19,7 +19,7 @@ app.use(
 app.use(require("./rutas/index"));
 
 mongoose.connect(
-  "mongodb://localhost:27017/academy",
+  process.env.URLDB,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -28,7 +28,7 @@ mongoose.connect(
   },
   (err, res) => {
     if (err) throw err;
-    console.log("Base de datos online");
+    console.log("Base de datos online", process.env.URLDB);
   }
 );
 
@@ -36,4 +36,31 @@ app.listen(process.env.PORT, () => {
   console.log("Escuchando en puerto", process.env.PORT);
 });
 
+//CODIGO EVENNODE
 
+// var mongoPassword = "kaka8596";
+
+// var http = require("http");
+// var server = http.createServer(function (req, res) {
+//   res.writeHead(200, { "Content-Type": "text/plain" });
+
+//   //var config = JSON.parse(process.env.APP_CONFIG);
+//   var MongoClient = require("mongodb").MongoClient;
+
+//   MongoClient.connect(
+//     "mongodb://" +
+//       "cc40df585d057fdd63c20ed9414b027f" +
+//       ":" +
+//       encodeURIComponent(mongoPassword) +
+//       "@" +
+//       "mongodb:27018/cc40df585d057fdd63c20ed9414b027f",
+//     function (err, db) {
+//       if (!err) {
+//         res.end("We are connected to MongoDB");
+//       } else {
+//         res.end("Error while connecting to MongoDB");
+//       }
+//     }
+//   );
+// });
+// server.listen(process.env.PORT);
