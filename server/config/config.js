@@ -14,7 +14,8 @@ let urlDB;
 if (process.env.MODE_ENV === "dev") {
   urlDB = "mongodb://localhost:27017/academy";
 } else {
-  urlDB = process.env.MONGO_URI;
+  //urlDB = process.env.MONGO_URI;
+  urlDB = "mongodb://localhost:27017/academy";
 }
 
 process.env.URLDB = urlDB;

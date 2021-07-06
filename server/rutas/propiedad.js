@@ -85,6 +85,7 @@ app.post("/propiedades", function (req, res) {
     Dormitorio: body.Dormitorio,
     Baño: body.Baño,
     Cocina: body.Cocina,
+    Comedor: body.Comedor,
     CocinaComedor: body.CocinaComedor,
     Placard: body.Placard,
     ComedorDiario: body.ComedorDiario,
